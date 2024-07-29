@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-    //
+    public function __construct() {
+        $this->middleware('auth')->except('index', 'show') /* ->onlu('mane', 'name'...) */;
+    }
     public function index() {
         $post = Post::get();
         return view('posts.index', ["posts"=>$post]);

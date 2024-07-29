@@ -32,7 +32,7 @@ Route::resource('blog', PostController::class, [
     ]
 ]);
 
-Route::view('/nosotros', 'about')->name('nosotros');
+Route::view('/nosotros', 'about')->name('nosotros') /*->middleware('auth') */;
 Route::view('/contacto', 'contact')->name('contacto');
 
 Route::get('/dashboard', function () {
