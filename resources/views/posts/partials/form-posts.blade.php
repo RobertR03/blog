@@ -1,16 +1,8 @@
-<label for="title">{{ __('Title') }}</label>
-<br>
-<input type="text" name="title" value="{{ old('title', $post->title) }}">
+<x-input-label for="title" :value="__('Title')"/>
+<x-text-input type="text" name="title" id="title" :value="old('title', $post->title)" class="w-full mt-1 block"/>
 @error('title')
-    <br>
-    <small style="color: red;">{{$message}}</small>
+    <small style="color: red;" class="mt-2">{{$message}}</small>
 @enderror
-<br>
-<label for="description">{{ __('Description') }}</label>
-<br>
-<textarea name="description">{{ old('description', $post->description) }}</textarea>
-@error('description')
-    <br>
-    <small style="color: red;">{{$message}}</small>
-@enderror
-<br>
+<x-input-label for="description" :value="__('Description')"/>
+<x-textarea name="description" id="description" class="w-full mt-1 block">{{ old('description', $post->description) }}</x-textarea>
+<x-input-error :messages="$errors->get('description')" class="mt-2" />

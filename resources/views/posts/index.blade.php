@@ -1,4 +1,4 @@
-<x-layout meta-title="blog" meta-description="Blog Description">
+<x-blog-layout meta-title="blog" meta-description="Blog Description">
     <div class="mx-auto mt-4 max-w-6xl">
         <h1 class="mb-4 text-center font-serif text-4xl font-extrabold text-sky-600 md:text-5xl">BLOG</h1>
     </div>
@@ -35,4 +35,4 @@
             @endforeach
         @endisset
     </aside>
-</x-layout>
+</x-blog-layout>
